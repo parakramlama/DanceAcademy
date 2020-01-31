@@ -1,90 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title> Teachers </title>
-<link href="new.css" rel="stylesheet" type="text/css" />
-
-<script src="jquery-3.2.1.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-
-</script>
-
+	<meta charset="UTF-8">
+	<title> Teachers </title>
+	<link href="dance.css" rel="stylesheet" type="text/css" />
+	<script src="jquery-3.2.1.js" type="text/javascript"></script>
+	<script type="text/javascript"> </script>
 </head>
+
 <body>
-<div id="top">
-<a href="index.php"> <img src="images/logo.jpg" /></a> 
-<h1>DANCE ACADEMY</h1> <br/>
+	<div id="top">
+		<a href="index.php"> <img src="images/logo.jpg" /></a> 
+		<h1>HAPPY DANCE ACADEMY</h1> <br/>
+	</div>
 
-</div>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="memuniforms.php" id="head">Uniforms</a> </li>	
+				<li><a href="staffdetails.php"> Members </a> </li>
+				<li><a href="forum.php"> Forum </a> </li>
+				<li><a href="logout.php"> Log Out </a> </li>
+			</ul>
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			<a> Follow us at:</a>	
+			<a href="https://www.facebook.com/ElectricCarsReport/" target="blank"> 
+			<img src="images/facebook.png" width="40" height="40" /> </a>
+			<a href="https://www.instagram.com/lucypet" target="blank"> 
+			<img src="images/instagram.jpg" width="40" height="40" /> </a>
+			<a href="https://www.gmail.com" target="blank"> 
+			<img src="images/gmail.png" width="40" height="40" /> </a>
+		</nav>
 
-<header>
-<nav>
-	<ul>
-	<li><a href="memuniforms.php" id="head">Uniforms</a> </li>	
-<li><a href="staffdetails.php"> Members </a> </li>
-<li><a href="forum.php"> Forum </a> </li>
-	<li><a href="logout.php"> Log Out </a> </li>
-	</ul>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-<a> Follow us at:</a>	
- <a href="https://www.facebook.com/ElectricCarsReport/" target="blank"> <img src="images/facebook.png" width="30" height="30" /> </a>
- <a href="https://www.instagram.com/lucypet" target="blank"> <img src="images/instagram.jpg" width="30" height="30" /> </a>
- <a href="https://www.gmail.com" target="blank"> <img src="images/gmail.png" width="30" height="30" /> </a>
-</nav>
+	</header>
 
- <?php
-include 'connect.php';
 
-$qry_sel = "SELECT *, YEAR(Current_Date)-YEAR(dob) as age FROM users";
-$result = $conn->query($qry_sel);
-if($result->num_rows > 0)
-{
-echo "<table border='1'  id='registration' width='100%'>
+	<?php
+	include 'connect.php';
 
-<h1 > Members Details </h1>
-      <tr>
-	  <th>Id</th>
-	  <th>Name</th>
-	  <th>Gender</th>
-	  <th>Email</th>
-	  <th>Phone</th>
-	  <th>DOB</th>
-	  <th>Age</th>
-	  <th>Username</th>
-	   <th>Password</th>
-	   <th>Re-Password</th>
-	  
-	  <th>Delete</th>
-	  </tr>";
+	$qry_sel = "SELECT *, YEAR(Current_Date)-YEAR(dob) as age FROM users";
+	$result = $conn->query($qry_sel);
+	if($result->num_rows > 0)
+	{
+	echo "<table border='1'  id='registration' width='100%'>
 
-while($data = $result->fetch_assoc())
-{
-echo "<tr>
-           <td>".$data['id'].
-     "</td><td>".$data['full_name'].
-	 "</td><td>".$data['Gender'].
-	  "</td><td>".$data['email'].
-	 "</td><td>".$data['phone'].
-	 "</td><td>".$data['dob'].
-	   "</td><td>".$data['age'].
-     "</td><td>".$data['username'].
-     "</td><td>".$data['password'].
-     "</td><td>".$data['re-password'].
-     "</td>
-	 
-	 <td><a href='userdelete.php?id=$data[id]'>Delete</a></td>
-	 </tr>";  
-}
+	<h1 > Members Details </h1>
+	      <tr>
+		  <th>Id</th>
+		  <th>Name</th>
+		  <th>Gender</th>
+		  <th>Email</th>
+		  <th>Phone</th>
+		  <th>DOB</th>
+		  <th>Age</th>
+		  <th>Username</th>
+		   <th>Password</th>
+		   <th>Re-Password</th>
+		  
+		  <th>Delete</th>
+		  </tr>";
 
-echo "</table>";
-}
-else
-{
-echo "No data";
-}
-?>
+	while($data = $result->fetch_assoc())
+	{
+	echo "<tr>
+	           <td>".$data['id'].
+	     "</td><td>".$data['full_name'].
+		 "</td><td>".$data['Gender'].
+		  "</td><td>".$data['email'].
+		 "</td><td>".$data['phone'].
+		 "</td><td>".$data['dob'].
+		   "</td><td>".$data['age'].
+	     "</td><td>".$data['username'].
+	     "</td><td>".$data['password'].
+	     "</td><td>".$data['re-password'].
+	     "</td>
+		 
+		 <td><a href='userdelete.php?id=$data[id]'>Delete</a></td>
+		 </tr>";  
+	}
+
+	echo "</table>";
+	}
+	else
+	{
+		echo "No data";
+	}
+	?>
+
 
 <footer>
 	<div class="main-footer">
@@ -101,3 +104,6 @@ echo "No data";
     	Copyright &copy; 2020 HAPPY DANCE ACADEMY. All Rights Reserved.
     </div>
 </footer>
+
+</body>
+</html>
