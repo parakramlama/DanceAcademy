@@ -88,7 +88,7 @@
     	$target = "images/";
   	
    // Get image name
-    	$image = $_FILES['image']['name'].basename($target);
+    $image = $_FILES['image']['name'].basename($target);
     	// Get text
   	$name = mysqli_real_escape_string($conn, $_POST['name']);
   	$dance_type = mysqli_real_escape_string($conn, $_POST['dance_type']);
@@ -110,7 +110,7 @@
     $result = mysqli_query($conn, "SELECT * FROM uniforms");
   ?>
 
-  <form method="POST" id="addcars" name="uniforms" action="<?php echo $_SERVER['PHP_SELF']; ?>" 
+  <form method="POST" id="adduniforms" name="uniforms" action="<?php echo $_SERVER['PHP_SELF']; ?>" 
     enctype="multipart/form-data" onsubmit="return validateForm.call(this);">
 
   	<input type="hidden" name="size" value="1000000">
@@ -133,7 +133,7 @@
   	
     <input type="submit" name="upload" value="Add Details">
   		
-    </form>
+  </form>
       
   <footer>
     <div class="main-footer">

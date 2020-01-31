@@ -19,7 +19,7 @@
                     <li><a href="teachers.php"> Teachers </a> </li>
                     <li><a href="classes.php"> Classes </a> </li>
                     <li><a href="booking.php" > Booking </a> </li>
-                    <li><a href="forum.php"> Forum </a> </li>
+                    <!--<li><a href="forum.php"> Forum </a> </li>-->
                     <li><a href="logout.php"> Log Out </a> </li>
             	</ul>
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
